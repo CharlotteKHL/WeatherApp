@@ -10,22 +10,22 @@ print(weatherData("Egham")[1])
 
 places = ["London", "Egham", "Whitton" ]
 
-value = [ "", "", ""]
-
+value = [ " "," "," "]
 
 page="""
 
 <|layout|columns=3 3 1
 
-<{value}|selector|lov={places}|dropdown|on_action=submit_selection|>
+<|container|
+<br/> <|{value}|selector|lov={places}|dropdown|label=Select the city|>
+<|{value[0]}|> <br/>
+<|{value[1]}|> <br/>
+<|{value[2]}|> <br/>
+|>
 
 Mascot goes here
 
 Menu goes here
-
-<|{value[0]}|>
-<|{value[1]}|>
-<|{value[2]}|>
 
 |>
   
