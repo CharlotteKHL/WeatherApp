@@ -31,9 +31,8 @@ page="""
 <|{value[2]}|> <br/>
 |>
 
-Mascot goes here<br/>
-Cat: <|{message}|text|><br/>
-<|{"cat.png"}|image|height=300px|width=300px|label=Cat|>
+Shiba: <|{message}|text|><br/>
+<|{"Shiba.png.gif"}|image|height=300px|width=300px|label=Shiba|>
 
 Menu goes here
 <|{"cat.png"}|image|height=50px|width=50px|label=Reccomendation|on_action=clothes_pressed|><|{"cat.png"}|image|height=50px|width=50px|label=Weather|on_action=weather_pressed|>
