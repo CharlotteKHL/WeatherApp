@@ -1,4 +1,8 @@
 from taipy import Gui
+from weatherAPI import weatherData
+
+# Calls API that prints weather data in JSON format
+print(weatherData("Egham"))
 
 places = [ "London", "Egham", "Whitton" ]
 
