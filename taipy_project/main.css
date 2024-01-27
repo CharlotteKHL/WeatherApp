@@ -1,0 +1,30 @@
+.container-card {
+	background-color: #F5F5DC;
+	color: #6F4E37;
+  	height: 160px;
+	text-align: center;
+	font-size: 20x;
+}
+
+:root {
+  font-size: 20px;
+}
+
+body {
+	background-color: white;
+}
+
+.taipy-layout {
+	text-align: center;
+	color: #6F4E37;
+	background-color: #C9FFE5;
+	background-repeat: no-repeat;
+}
+
+.taipy-selector {
+	border:3px solid #6F4E37;
+}
+
+.container-selector {
+	background-color: #6F4E37;
+}
