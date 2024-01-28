@@ -32,9 +32,9 @@ dialogue = "empty.png"
 bg = "Default.png"
 degrees = ""
 
-places = ["London", "Egham", "Whitton", "Algiers", "Aberdeen", "Mumbai", "Manila", "New York", "Paris", "Cape Town"]
+places = ["London", "Egham", "Whitton", "Algiers", "Aberdeen", "Mumbai", "Manila", "New York", "Paris", "Cape Town", "Abuja"]
 
-value = [ " "," "," ", " ", " ", " ", " ", " ", " ", " "]
+value = [ " "," "," ", " ", " ", " ", " ", " ", " ", " ", " "]
 
 page="""
 
@@ -70,7 +70,7 @@ page="""
 
 <|{bg}|image|label=Weather|height=240px|width=400px|>
 
-<|{dog}|image|height=300px|width=300px|label=Shiba|>
+<|{dog}|image|height=300px|width=300px|label=Soba|>
 
 <|{dialogue}|image|height=300px|width=520px|label=Words|>
 
