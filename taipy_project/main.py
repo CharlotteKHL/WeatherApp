@@ -17,8 +17,9 @@ def clothes_pressed(state):
 
 def on_change(state, var_name, var_value):
 	if var_name == "value":
-		state.value = weatherData(var_value)
 		state.recommendations = getRecommendations(var_value)
+		state.value = weatherData(var_value)
+		state.degrees = str(state.value[2]) + u'\N{DEGREE SIGN}' + "C"
 		print(state.recommendations)
 
 global recommendations, clothes, dog, coat, dialogue, bg
@@ -29,6 +30,7 @@ dog = "shiba.gif"
 coat = "empty.png"
 dialogue = "empty.png"
 bg = "Default.png"
+degrees = ""
 
 places = ["London", "Egham", "Whitton", "Algiers", "Aberdeen", "Mumbai", "Manila", "New York", "Paris", "Cape Town"]
 
@@ -47,7 +49,7 @@ page="""
 <br/>
 <|{value[0]}|> <br/>
 <|{value[1]}|> <br/>
-<|{value[2]}|> <br/>
+<|{degrees}|> <br/>
 |>
 |>
 
