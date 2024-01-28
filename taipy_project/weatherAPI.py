@@ -24,6 +24,85 @@ def weatherData(name):
         print(f'Error: {response.status_code}')
 
 
+def getRecommendations(name):
+    data = weatherData(name)
+    temp = formatTemp(data[2])
+
+    clothes = []
+    weather = data[1]
+    Hazard = ["Tornado", "Dust", "Ash", "Squall"] 
+    Cloud = ["Clouds", "Fog", "Smoke", "Haze"]
+    Precipitation = ["Rain", "Drizzle", "Mist"]
+    
+    if weather == "Clear":
+        if temp < 14:
+            clothes.append("coldoutfit.png")
+        else:
+            clothes.append("warmoutfit.png")
+        if temp < 8:
+            clothes.append("coat.png")
+        else:
+            clothes.append("nocoat.png")
+            
+        if temp >= 14:
+            clothes.append("sunnydog.gif")
+        else:
+            clothes.append("cleardog.gif")
+        clothes.append("clearbg.gif")
+        clothes.append("cleardialogue.png")
+    if weather in Hazard:
+        if temp < 14:
+            clothes.append("coldoutfit.png")
+        else:
+            clothes.append("warmoutfit.png")
+        if temp < 8:
+            clothes.append("coat.png")
+        else:
+            clothes.append("nocoat.png")
+        clothes.append("raindog.gif")
+        clothes.append("hazardbg.gif")
+        clothes.append("hazarddialogue.png")
+    if weather in Cloud:
+        if temp < 14:
+            clothes.append("coldoutfit.png")
+        else:
+            clothes.append("warmoutfit.png")
+        if temp < 8:
+            clothes.append("coat.png")
+        else:
+            clothes.append("nocoat.png")
+        clothes.append("shiba.gif")
+        clothes.append("cloudybg.gif")
+        clothes.append("cloudydialogue.png")
+    if weather in Precipitation:
+        if temp < 14:
+            clothes.append("coldoutfit.png")
+        else:
+            clothes.append("warmoutfit.png")
+        if temp < 8:
+            clothes.append("coat.png")
+        else:
+            clothes.append("nocoat.png")
+        clothes.append("raindog.gif")
+        clothes.append("raindbg.gif")
+        clothes.append("precipitationdialogue.png")
+    elif weather == "Snow": #Snow
+        if temp < 14:
+            clothes.append("coldoutfit.png")
+        else:
+            clothes.append("warmoutfit.png")
+        if temp < 8:
+            clothes.append("coat.png")
+        else:
+            clothes.append("nocoat.png")
+        clothes.append("raindog.gif")
+        clothes.append("snowbg.gif")
+        clothes.append("snowdialogue.png")
+    return clothes
+
 def kelvinToCelcius(num):
-    conversion = round(num - 273.15, 2)
-    return str(conversion) + u'\N{DEGREE SIGN}' + "C"
+    return round(num - 273.15, 2)
+
+def formatTemp(temp):
+    print(temp)
+    return int(float(temp))
