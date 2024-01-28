@@ -1,9 +1,12 @@
 from taipy import Gui 
 from weatherAPI import weatherData, getRecommendations
+import time
 
 def weather_pressed(state):
     if state.recommendations[3] != "Default.png":
     	state.dog = state.recommendations[2]
+    	state.bg = "static.png"
+    	time.sleep(0.3)
     	state.bg = state.recommendations[3]
     	state.dialogue = state.recommendations[4]
     
@@ -67,7 +70,7 @@ page="""
 
 <|{dog}|image|height=300px|width=300px|label=Shiba|>
 
-<|{dialogue}|image|height=300px|width=500px|label=Words|>
+<|{dialogue}|image|height=300px|width=520px|label=Words|>
 
 #
 
