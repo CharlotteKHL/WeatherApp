@@ -2,22 +2,30 @@ from taipy import Gui
 from weatherAPI import weatherData, getRecommendations
 
 def weather_pressed(state):
-    state.message = "Today is cold"
+    state.dog = recommendations[2]
+    state.bg = recommendations[3]
+    state.dialogue = recommendations[4]
     
 def clothes_pressed(state):
-    state.message = "You should wear a hat"
+    state.clothes = recommendations[0]
+    state.coat = recommendations[1]
 
 def on_change(state, var_name, var_value):
 	if var_name == "value":
 		state.value = weatherData(var_value)
 		state.recommendations = getRecommendations(var_value)
+		print(state.recommendations)
 
-recommendations = []	
+global recommendations, clothes, dog, coat, dialogue, bg
+recommendations = [ "", "", "shiba.gif", "Default.png", ""]	
 
-message = "Welcome to CKC Weathers"
+clothes = ""
+dog = "shiba.gif"
+coat = ""
+dialogue = ""
+bg = "Default.png"
 
 places = ["London", "Egham", "Whitton" ]
-
 
 value = [ " "," "," "]
 
@@ -35,18 +43,13 @@ page="""
 <|{value[0]}|> <br/>
 <|{value[1]}|> <br/>
 <|{value[2]}|> <br/>
-<|{recommendations[0]}|> <br/>
-<|{recommendations[1]}|> <br/>
-<|{recommendations[2]}|> <br/>
-<|{recommendations[3]}|> <br/>
-<|{recommendations[4]}|> <br/>
 |>
 |>
 
 Shiba: <|{message}|text|><br/>
 
 <br/>
-<|{"shirt.png.png"}|image|height=100px|width=100px|label=Reccomendation|on_action=clothes_pressed|id=button|><|{"sun.gif"}|image|height=100px|width=100px|label=Weather|on_action=weather_pressed|id=button|>
+<|{"shirt.png.png"}|image|height=100px|width=100px|label=Recommendation|on_action=clothes_pressed|id=button|><|{"sun.gif"}|image|height=100px|width=100px|label=Weather|on_action=weather_pressed|id=button|>
 
 #
 
@@ -56,15 +59,15 @@ Shiba: <|{message}|text|><br/>
 
 #
 
-#
+<|{outfit}|image|height=300px|width=300px|label=Clothes|>
 
-#
+<|{coat}|image|height=300px|width=300px|label=To coat|>
 
-#
+<|{bg}|image|label=Weather|>
 
-<|{"Shiba.png.gif"}|image|height=300px|width=300px|label=Shiba|>
+<|{dog}|image|height=300px|width=300px|label=Shiba|>
 
-#
+<|{dialogue}|image|height=300px|width=300px|label=Words|>
 
 #
 
