@@ -18,8 +18,10 @@ body {
 .taipy-layout {
 	text-align: center;
 	color: #6F4E37;
-	background-color: #C9FFE5;
+	background-image: url("bgRoom.png");
 	background-repeat: no-repeat;
+	background-position: center;
+	background-color: white;
 }
 
 .taipy-selector {
@@ -32,4 +34,5 @@ body {
 
 #button {
 	border: 3px solid #6F4E37;
+	background-color: #F5F5DC;
 }
