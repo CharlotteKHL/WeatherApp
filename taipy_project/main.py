@@ -25,6 +25,7 @@ page="""
 <|layout|columns=1 2 1
 
 <|part|
+<br/>
 <|container container-selector|
 <|{value}|selector|lov={places}|dropdown|label=Select the city|id="select"|>
 |>
@@ -38,7 +39,8 @@ page="""
 
 Shiba: <|{message}|text|><br/>
 
-<|{"cat.png"}|image|height=50px|width=50px|label=Reccomendation|on_action=clothes_pressed|><|{"cat.png"}|image|height=50px|width=50px|label=Weather|on_action=weather_pressed|>
+<br/>
+<|{"shirt.png.png"}|image|height=100px|width=100px|label=Reccomendation|on_action=clothes_pressed|id=button|><|{"sun.gif"}|image|height=100px|width=100px|label=Weather|on_action=weather_pressed|id=button|>
 
 #
 

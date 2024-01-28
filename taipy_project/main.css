@@ -4,10 +4,11 @@
   	height: 160px;
 	text-align: center;
 	font-size: 20x;
+	border: 3px solid #6F4E37;
 }
 
 :root {
-  font-size: 20px;
+  	font-size: 20px;
 }
 
 body {
@@ -27,4 +28,8 @@ body {
 
 .container-selector {
 	background-color: #6F4E37;
+}
+
+#button {
+	border: 3px solid #6F4E37;
 }
