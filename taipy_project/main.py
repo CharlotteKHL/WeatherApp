@@ -1,5 +1,5 @@
 from taipy import Gui 
-from weatherAPI import weatherData
+from weatherAPI import weatherData, getRecommendations
 
 def weather_pressed(state):
     state.message = "Today is cold"
@@ -10,13 +10,14 @@ def clothes_pressed(state):
 def on_change(state, var_name, var_value):
 	if var_name == "value":
 		state.value = weatherData(var_value)
+		state.recommendations = getRecommendations(var_value)
+
+recommendations = []	
 
 message = "Welcome to CKC Weathers"
-		
-# Calls API that prints weather data in JSON format
-print(weatherData("Egham")[1])
 
 places = ["London", "Egham", "Whitton" ]
+
 
 value = [ " "," "," "]
 
@@ -34,6 +35,10 @@ page="""
 <|{value[0]}|> <br/>
 <|{value[1]}|> <br/>
 <|{value[2]}|> <br/>
+<|{recommendations[0]}|> <br/>
+<|{recommendations[1]}|> <br/>
+<|{recommendations[2]}|> <br/>
+<|{recommendations[3]}|> 
 |>
 |>
 
@@ -67,7 +72,6 @@ Shiba: <|{message}|text|><br/>
 |>
   
 """
-
 
 if __name__ == "__main__":
 	Gui(page).run(use_reloader=True, port=5001)
