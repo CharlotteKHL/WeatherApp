@@ -22,21 +22,47 @@ value = [ " "," "," "]
 
 page="""
 
-<|layout|columns=3 3 1
+<|layout|columns=1 2 1
 
-<|container|
-<br/> <|{value}|selector|lov={places}|dropdown|label=Select the city|>
+<|part|
+<br/>
+<|container container-selector|
+<|{value}|selector|lov={places}|dropdown|label=Select the city|id="select"|>
+|>
+<|container container-card|
+<br/>
 <|{value[0]}|> <br/>
 <|{value[1]}|> <br/>
 <|{value[2]}|> <br/>
 |>
+|>
 
 Shiba: <|{message}|text|><br/>
+
+<br/>
+<|{"shirt.png.png"}|image|height=100px|width=100px|label=Reccomendation|on_action=clothes_pressed|id=button|><|{"sun.gif"}|image|height=100px|width=100px|label=Weather|on_action=weather_pressed|id=button|>
+
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
+#
+
 <|{"Shiba.png.gif"}|image|height=300px|width=300px|label=Shiba|>
 
-Menu goes here
-<|{"shirt.png.png"}|image|height=50px|width=50px|label=Recommendation|on_action=clothes_pressed|><|{"Sun.gif"}|image|height=50px|width=50px|label=Weather|on_action=weather_pressed|>
+#
 
+#
+
+#
 
 |>
   
