@@ -2,13 +2,13 @@ from taipy import Gui
 from weatherAPI import weatherData, getRecommendations
 
 def weather_pressed(state):
-    state.dog = recommendations[2]
-    state.bg = recommendations[3]
-    state.dialogue = recommendations[4]
+    state.dog = state.recommendations[2]
+    state.bg = state.recommendations[3]
+    state.dialogue = state.recommendations[4]
     
 def clothes_pressed(state):
-    state.clothes = recommendations[0]
-    state.coat = recommendations[1]
+    state.clothes = state.recommendations[0]
+    state.coat = state.recommendations[1]
 
 def on_change(state, var_name, var_value):
 	if var_name == "value":
@@ -19,10 +19,10 @@ def on_change(state, var_name, var_value):
 global recommendations, clothes, dog, coat, dialogue, bg
 recommendations = [ "", "", "shiba.gif", "Default.png", ""]	
 
-clothes = ""
+clothes = "empty.png"
 dog = "shiba.gif"
-coat = ""
-dialogue = ""
+coat = "empty.png"
+dialogue = "empty.png"
 bg = "Default.png"
 
 places = ["London", "Egham", "Whitton" ]
@@ -46,7 +46,7 @@ page="""
 |>
 |>
 
-Shiba: <|{message}|text|><br/>
+#
 
 <br/>
 <|{"shirt.png.png"}|image|height=100px|width=100px|label=Recommendation|on_action=clothes_pressed|id=button|><|{"sun.gif"}|image|height=100px|width=100px|label=Weather|on_action=weather_pressed|id=button|>
@@ -59,15 +59,15 @@ Shiba: <|{message}|text|><br/>
 
 #
 
-<|{outfit}|image|height=300px|width=300px|label=Clothes|>
+<|{clothes}|image|label=Clothes|>
 
-<|{coat}|image|height=300px|width=300px|label=To coat|>
+<|{coat}|image|label=To coat|>
 
 <|{bg}|image|label=Weather|>
 
 <|{dog}|image|height=300px|width=300px|label=Shiba|>
 
-<|{dialogue}|image|height=300px|width=300px|label=Words|>
+<|{dialogue}|image|label=Words|>
 
 #
 
