@@ -6,7 +6,7 @@ Weather App
 
 ## Description
 
-Welcome to CKC Weather App. Soba the Shiba mascot will be waiting for you and will present you with suitable recommendations on what to where depending on the live current weather from a range of cities you can choose from.
+Welcome to CKC Weather App. Soba the Shiba mascot will be waiting for you and will present you with suitable recommendations on what to wear depending on the live current weather from a range of cities you can choose from.
 
 ## Installation
 
